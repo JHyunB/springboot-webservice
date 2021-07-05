@@ -3,7 +3,7 @@ package com.jhyunb.book.springboot.web;
 import com.jhyunb.book.springboot.service.posts.PostsService;
 import com.jhyunb.book.springboot.web.dto.PostsResponseDto;
 import com.jhyunb.book.springboot.web.dto.PostsSaveRequestDto;
-import com.jhyunb.book.springboot.web.dto.PostsUpdateRequestsDto;
+import com.jhyunb.book.springboot.web.dto.PostsUpdateRequestDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,7 +19,7 @@ public class PostsApiController {
     }
 
     @PutMapping("/api/v1/posts/{id}")
-    public Long update(@PathVariable Long id, @RequestBody PostsUpdateRequestsDto requestDto){
+    public Long update(@PathVariable Long id, @RequestBody PostsUpdateRequestDto requestDto){
         return postsService.update(id, requestDto);
     }
 
